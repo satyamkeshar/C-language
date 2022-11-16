@@ -1,0 +1,275 @@
+Given a square matrix, calculate the absolute difference between the sums of its diagonals.
+
+For example, the square matrix  is shown below:
+
+solution: 
+
+
+PREPARENEW
+CERTIFY
+COMPETE
+Search
+ satyamkesharsatu 
+All Contests  Kodekar Contest Sem-1  Diagonal Difference
+Diagonal Differencelocked
+Problem
+Submissions
+Leaderboard
+Discussions
+Given a square matrix, calculate the absolute difference between the sums of its diagonals.
+
+For example, the square matrix  is shown below:
+
+1 2 3
+4 5 6
+9 8 9  
+The left-to-right diagonal = . The right to left diagonal = . Their absolute difference is .
+
+Function description
+
+Complete the  function in the editor below.
+
+diagonalDifference takes the following parameter:
+
+int arr[n][m]: an array of integers
+Return
+
+int: the absolute diagonal difference
+Input Format
+
+The first line contains a single integer, , the number of rows and columns in the square matrix .
+Each of the next  lines describes a row, , and consists of  space-separated integers .
+
+Constraints
+
+Output Format
+
+Return the absolute difference between the sums of the matrix's two diagonals as a single integer.
+
+Sample Input
+
+3
+11 2 4
+4 5 6
+10 8 -12
+Sample Output
+
+15
+Explanation
+
+The primary diagonal is:
+
+11
+   5
+     -12
+Sum across the primary diagonal: 11 + 5 - 12 = 4
+
+The secondary diagonal is:
+
+     4
+   5
+10
+Sum across the secondary diagonal: 4 + 5 + 10 = 19
+Difference: |4 - 19| = 15
+
+Note: |x| is the absolute value of x
+
+Submissions: 17
+Max Score: 10
+Difficulty: Easy
+Rate This Challenge:
+
+    
+More
+ 
+1
+#include <bits/stdc++.h>
+2
+​
+3
+using namespace std;
+4
+​
+5
+string ltrim(const string &);
+6
+string rtrim(const string &);
+7
+vector<string> split(const string &);
+8
+​
+9
+/*
+10
+ * Complete the 'diagonalDifference' function below.
+11
+ *
+12
+ * The function is expected to return an INTEGER.
+13
+ * The function accepts 2D_INTEGER_ARRAY arr as parameter.
+14
+ */
+15
+​
+16
+int diagonalDifference(vector<vector<int>> arr) {
+17
+​
+18
+}
+19
+​
+20
+int main()
+21
+{
+22
+    ofstream fout(getenv("OUTPUT_PATH"));
+23
+​
+24
+    string n_temp;
+25
+    getline(cin, n_temp);
+26
+​
+27
+    int n = stoi(ltrim(rtrim(n_temp)));
+28
+​
+29
+    vector<vector<int>> arr(n);
+30
+​
+31
+    for (int i = 0; i < n; i++) {
+32
+        arr[i].resize(n);
+33
+​
+34
+        string arr_row_temp_temp;
+35
+        getline(cin, arr_row_temp_temp);
+36
+​
+37
+        vector<string> arr_row_temp = split(rtrim(arr_row_temp_temp));
+38
+​
+39
+        for (int j = 0; j < n; j++) {
+40
+            int arr_row_item = stoi(arr_row_temp[j]);
+41
+​
+42
+            arr[i][j] = arr_row_item;
+43
+        }
+44
+    }
+45
+​
+46
+    int result = diagonalDifference(arr);
+47
+​
+48
+    fout << result << "\n";
+49
+​
+50
+    fout.close();
+51
+​
+52
+    return 0;
+53
+}
+54
+​
+55
+string ltrim(const string &str) {
+56
+    string s(str);
+57
+​
+58
+    s.erase(
+59
+        s.begin(),
+60
+        find_if(s.begin(), s.end(), not1(ptr_fun<int, int>(isspace)))
+61
+    );
+62
+​
+63
+    return s;
+64
+}
+65
+​
+66
+string rtrim(const string &str) {
+67
+    string s(str);
+68
+​
+69
+    s.erase(
+70
+        find_if(s.rbegin(), s.rend(), not1(ptr_fun<int, int>(isspace))).base(),
+71
+        s.end()
+72
+    );
+73
+​
+74
+    return s;
+75
+}
+76
+​
+77
+vector<string> split(const string &str) {
+78
+    vector<string> tokens;
+79
+​
+80
+    string::size_type start = 0;
+81
+    string::size_type end = 0;
+82
+​
+83
+    while ((end = str.find(" ", start)) != string::npos) {
+84
+        tokens.push_back(str.substr(start, end - start));
+85
+​
+86
+        start = end + 1;
+87
+    }
+88
+​
+89
+    tokens.push_back(str.substr(start));
+90
+​
+91
+    return tokens;
+92
+}
+93
+​
+Line: 1 Col: 1
+Run Code Submit CodeUpload Code as File 
+Test against custom input
+Interview Prep | Blog | Scoring | Environment | FAQ | About Us | Support | Careers | Terms Of Service | Privacy Policy |
+
